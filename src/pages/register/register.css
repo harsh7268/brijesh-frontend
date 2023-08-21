@@ -1,0 +1,50 @@
+.register{
+    height: calc(100vh - 50px);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    background:url("https://img.freepik.com/free-photo/paper-clips-keyboard-laptop-spiral-notepad-sticky-notes-white-desk-with-space-writing-text_23-2148041896.jpg");
+    background-size: cover;
+    align-items: center;
+}
+.registerTitle{
+    font-size:50px
+}
+.registerForm{
+    display: flex;
+    margin-top:20px;
+    flex-direction: column;
+}
+.registerForm > label {
+    margin:10px 0;
+
+}
+.loginInput{
+    padding:10px;
+    background-color: white;
+    border:none;
+    width:230px;
+}
+.registerButton{
+    margin-top:20px;
+    cursor: pointer;
+    background-color: teal;
+    border:none;
+    color:white;
+    border-radius: 10px;
+    padding:10px;
+
+}
+.registerLoginButton{
+    position: absolute;
+    top:60px;
+    right:20px;
+    background-color: lightcoral;
+    cursor: pointer;
+    border:none;padding:10px;
+    color:white;
+    border-radius:10px;
+}
+.errormsg{
+    color:red;
+}
