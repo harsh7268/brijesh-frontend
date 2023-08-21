@@ -66,11 +66,11 @@ export default function StockNew({ stocklist }) {
   );
   const dateBodyTemplate = (rowData) => formatDate(rowData.date);
 
-  const dateFilterTemplate = (options) => <Calendar value={options.value} onChange={(e) => options.filterCallback(e.value, options.index)} dateFormat="mm/dd/yy" placeholder="mm/dd/yyyy" mask="99/99/9999" />;
+  const dateFilterTemplate = (options) => <Calendar value={options.value} onChange={(e) => options.filterCallback(e?.value, options.index)} dateFormat="mm/dd/yy" placeholder="mm/dd/yyyy" mask="99/99/9999" />;
 
   const balanceBodyTemplate = (rowData) => formatCurrency(rowData.balance);
 
-  const balanceFilterTemplate = (options) => <InputNumber value={options.value} onChange={(e) => options.filterCallback(e.value, options.index)} mode="currency" currency="USD" locale="en-US" />;
+  const balanceFilterTemplate = (options) => <InputNumber value={options.value} onChange={(e) => options.filterCallback(e?.value, options.index)} mode="currency" currency="USD" locale="en-US" />;
 
   const statusBodyTemplate = (rowData) => <span className={`customer-badge status-${rowData.status}`}>{rowData.status}</span>;
 
@@ -78,7 +78,7 @@ export default function StockNew({ stocklist }) {
 
   const activityFilterTemplate = (options) => (
     <>
-      <Slider value={options.value} onChange={(e) => options.filterCallback(e.value)} range className="m-3" />
+      <Slider value={options.value} onChange={(e) => options.filterCallback(e?.value)} range className="m-3" />
       <div className="flex align-items-center justify-content-between px-2">
         <span>{options.value ? options.value[0] : 0}</span>
         <span>{options.value ? options.value[1] : 100}</span>
@@ -103,7 +103,7 @@ export default function StockNew({ stocklist }) {
           dataKey="id"
           rowHover
           selection={selectedCustomers}
-          onSelectionChange={(e) => setSelectedCustomers(e.value)}
+          onSelectionChange={(e) => setSelectedCustomers(e?.value)}
           filters={filters}
           filterDisplay="menu"
           loading={loading}

@@ -189,7 +189,7 @@ export default function Stock({ stocklist }) {
 
   const onCategoryChange = (e) => {
     const _product = { ...product };
-    _product.category = e.value;
+    _product.category = e?.value;
     setProduct(_product);
   };
 
@@ -202,7 +202,7 @@ export default function Stock({ stocklist }) {
   };
 
   const onInputNumberChange = (e, name) => {
-    const val = e.value || 0;
+    const val = e?.value || 0;
     const _product = { ...product };
     _product[`${name}`] = val;
 
@@ -271,7 +271,7 @@ export default function Stock({ stocklist }) {
           ref={dt}
           value={stocklist}
           selection={selectedProducts}
-          onSelectionChange={(e) => setSelectedProducts(e.value)}
+          onSelectionChange={(e) => setSelectedProducts(e?.value)}
           dataKey="id"
           paginator
           rows={10}
